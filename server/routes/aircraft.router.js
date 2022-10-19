@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
   // GET route code here
   console.log(req.user)
   if(req.isAuthenticated()) {
-    let queryText = `SELECT * FROM "aircraft";`;
-    pool.query(queryText).then((result) => {
+    let queryText = `SELECT * FROM "aircraft" WHERE "user_id" = $1;`;
+    pool.query(queryText, [req.user.id]).then((result) => {
       res.send(result.rows);
     }).catch((error) => {
       console.log(error);
