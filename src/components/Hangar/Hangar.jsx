@@ -1,7 +1,18 @@
 import axios from "axios";
+import { useState, useEffect } from "react";
 
 
-function Hangar () {
+function Hangar() {
+
+    const [aircraftList, setAircraftList] = useState([]);
+
+    useEffect(() => {
+        // On Page Load
+        fetchAircraft();
+
+    }, []);
+
+
 
     const fetchAircraft = () => {
         axios.get('/api/aircraft').then((response) => {
@@ -18,12 +29,30 @@ function Hangar () {
                 <h3>Hangar</h3>
             </div>
             <div>
-                <p>Cessna 172</p>
-                <p>Hours: </p>
-                <button>Edit Checklist</button>
-                <button>Start Pre-Flight</button>
+
+
             </div>
-                
+            <div>
+                {
+                    aircraftList.length === 0 && (
+                        <div>No Aircraft in Your Hangar</div>
+                    )
+                }
+                {
+                    aircraftList.map(craft => {
+                        return (
+                            <div>
+                                <img src={craft.url} />
+                                <h4>{craft.name}</h4>
+                                <h6>Hours Flown: {craft.hours}</h6>
+                                <button>Edit Checklist</button>
+                                <button>Start Pre-Flight</button>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+
         </>
     )
 }
