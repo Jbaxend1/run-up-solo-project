@@ -12,8 +12,6 @@ function Hangar() {
 
     }, []);
 
-
-
     const fetchAircraft = () => {
         axios.get('/api/aircraft').then((response) => {
             setAircraftList(response.data);

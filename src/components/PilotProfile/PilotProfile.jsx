@@ -10,6 +10,7 @@ function PilotProfile() {
         <>
             <div>
                 <h3>{user.username}</h3>
+                <img className="profile-pic" src={user.picture} />
             </div>
             <div>
                 <h6>Certifications:</h6>
