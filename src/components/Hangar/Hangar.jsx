@@ -3,8 +3,13 @@ import axios from "axios";
 
 function Hangar () {
 
-    const getAircraft = () => {
-    
+    const fetchAircraft = () => {
+        axios.get('/api/aircraft').then((response) => {
+            setAircraftList(response.data);
+        }).catch((error) => {
+            console.log(error);
+            alert('Something wrong Aircraft GET');
+        })
     }
 
     return (
