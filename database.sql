@@ -52,3 +52,37 @@ VALUES
     ('Carburetor Heat: COLD (in)', 'run_up', '1'),
     ('Throttle: FULL', 'run_up', '1'),
     ('Elevator Control: LIFT NOSE WHEEL at 50kts', 'takeoff', '1');
+
+
+---------- Kitfox STi ----------
+
+INSERT INTO "item" ("description", "category", "aircraft_id")
+VALUES
+    ('Parking Brakes: ON', 'before_engine', '2'),
+    ('Fuel Shuffoff Valve: ON', 'before_engine', '2'),
+    ('Master Battery: ON', 'before_engine', '2'),
+    ('Start Power: ON', 'before_engine', '2'),
+    ('Fuel Pump: ON', 'before_engine', '2'),
+    ('Throttle: Cracked (~10%)', 'before_engine', '2'),
+    ('LANE A: ON', 'before_engine', '2'),
+    ('LANE B: ON', 'before_engine', '2'),
+    ('Start Button: PUSH TO START', 'before_engine', '2'),
+    ('Start Power: OFF', 'taxi', '2'),
+    ('Avionics: ON', 'taxi', '2'),
+    ('Controls: FREE', 'run_up', '2'),
+    ('Interior Doors: LATCHED', 'run_up', '2'),
+    ('Seat Belts: FASTENED', 'run_up', '2'),
+    ('Gas Tank (LEFT): Quantity Check', 'run_up', '2'),
+    ('Gas Tank (RIGHT): Quantity Check', 'run_up', '2'),
+    ('Altimeter: SET', 'run_up', '2'),
+    ('Run-Up: Ignition CHECK', 'run_up', '2'),
+    ('Trim/Flaps: As Required', 'run_up', '2'),
+    ('Coolant Temp: 120 fahrenheit (min)', 'run_up', '2'),
+    ('Pattern: CHECK TRAFFIC', 'run_up', '2'),
+    ('Flaps: UP', 'takeoff', '2'),
+    ('Throttle: FULL', 'takeoff', '2'),
+    ('Apply Forward Pressure: 15-20kts (lift tail)', 'takeoff', '2'),
+    ('Slight Back Pressure: 30-35kts', 'takeoff', '2'),
+    ('Climb Speed: 47-56kts', 'takeoff', '2'),
+    ('Fuel Pump: OFF', 'takeoff', '2');
+

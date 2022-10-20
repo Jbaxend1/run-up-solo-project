@@ -1,10 +1,18 @@
-
+import { useHistory } from 'react-router-dom';
 
 function BeforeEngine () {
+
+    const history = useHistory();
+
     return (
         <>
             <h2>Before Engine</h2>
-            <button>Back</button>
+            <button onClick={() => {history.push('/home')}}>Back</button>
+            <ul>
+                {
+                    
+                }
+            </ul>
         </>
     )
 }

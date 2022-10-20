@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 
 
 function Hangar() {
+
+    const history = useHistory();
 
     const [aircraftList, setAircraftList] = useState([]);
 
@@ -44,7 +47,7 @@ function Hangar() {
                                 <h4>{craft.name}</h4>
                                 <h6>Hours Flown: {craft.hours}</h6>
                                 <button>Edit Checklist</button>
-                                <button>Start Pre-Flight</button>
+                                <button onClick={() => {history.push('/before-engine')}}>Start Pre-Flight</button>
                             </div>
                         )
                     })
