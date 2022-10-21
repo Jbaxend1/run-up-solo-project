@@ -1,11 +1,14 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function Hangar() {
 
     const history = useHistory();
+
+    const dispatch = useDispatch();
 
     const [aircraftList, setAircraftList] = useState([]);
 
@@ -22,6 +25,15 @@ function Hangar() {
             console.log(error);
             alert('Something wrong Aircraft GET');
         })
+    }
+
+    function planeChecklist(craft) {
+        console.log('Aircraft Id:', craft.id);
+        // dispatch action
+        dispatch({ type: 'SELECT_AIRCRAFT', payload: craft });
+        
+
+        history.push('/before-engine');
     }
 
     return (
@@ -42,14 +54,14 @@ function Hangar() {
                 {
                     aircraftList.map(craft => {
                         return (
-                            <div>
+                            <div key={craft.id}>
                                 <img src={craft.url} />
                                 <h4>{craft.name}</h4>
                                 <h6>Hours Flown: {craft.hours}</h6>
                                 <button>Edit Checklist</button>
-                                <button onClick={() => {history.push('/before-engine')}}>Start Pre-Flight</button>
+                                <button onClick={(event) => planeChecklist(craft)}>Start Pre-Flight</button>
                             </div>
-                        )
+                        );
                     })
                 }
             </div>
