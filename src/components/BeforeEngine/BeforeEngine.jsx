@@ -1,8 +1,13 @@
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 function BeforeEngine () {
 
     const history = useHistory();
+
+    const aircraft = useSelector(store => store.aircraft);
+
+    const items = useSelector(store => store.items);
 
     return (
         <>
@@ -10,7 +15,13 @@ function BeforeEngine () {
             <button onClick={() => {history.push('/home')}}>Back</button>
             <ul>
                 {
-                    
+                    items.map( item => {
+                        return (
+                            <li>
+                                {item.description}
+                            </li>
+                        )
+                    })
                 }
             </ul>
         </>
