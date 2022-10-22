@@ -13,6 +13,7 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
+import './App.css';
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
@@ -20,10 +21,9 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import BeforeEngine from '../BeforeEngine/BeforeEngine';
-
-import './App.css';
 import Taxi from '../Taxi/Taxi';
 import RunUp from '../RunUp/RunUp';
+import Takeoff from '../Takeoff/Takeoff';
 
 function App() {
   const dispatch = useDispatch();
@@ -120,6 +120,9 @@ function App() {
           </Route>
           <Route exact path="/run-up">
             <RunUp />
+          </Route>
+          <Route exact path="/takeoff">
+            <Takeoff />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
