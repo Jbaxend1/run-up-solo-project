@@ -1,9 +1,12 @@
 
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function Taxi() {
 
     const items = useSelector(store => store.items);
+
+    const history = useHistory();
 
     return (
         <>
