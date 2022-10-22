@@ -25,6 +25,7 @@ import Taxi from '../Taxi/Taxi';
 import RunUp from '../RunUp/RunUp';
 import Takeoff from '../Takeoff/Takeoff';
 import Complete from '../Complete/Complete';
+import EditChecklist from '../EditChecklist/EditChecklist';
 
 function App() {
   const dispatch = useDispatch();
@@ -127,6 +128,9 @@ function App() {
           </Route>
           <Route exact path="/complete">
             <Complete />
+          </Route>
+          <Route exact path="/edit-checklist">
+            <EditChecklist />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

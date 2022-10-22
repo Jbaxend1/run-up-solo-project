@@ -36,6 +36,14 @@ function Hangar() {
         history.push('/before-engine');
     }
 
+    function editChecklist(craft) {
+        console.log('Aircraft Id:', craft.id);
+        dispatch({ type: 'SELECT_AIRCRAFT', payload: craft });
+        dispatch({ type: 'AIRCRAFT_ITEMS', payload: { id: craft.id }});
+
+        history.push('/edit-checklist');
+    }
+
     return (
         <>
             <div>
@@ -58,7 +66,7 @@ function Hangar() {
                                 <img src={craft.url} />
                                 <h4>{craft.name}</h4>
                                 <h6>Hours Flown: {craft.hours}</h6>
-                                <button>Edit Checklist</button>
+                                <button onClick={(event) => editChecklist(craft)}>Edit Checklist</button>
                                 <button onClick={(event) => planeChecklist(craft)}>Start Pre-Flight</button>
                             </div>
                         );
