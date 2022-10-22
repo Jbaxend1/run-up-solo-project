@@ -32,7 +32,7 @@ function Hangar() {
         // dispatch action for reducer
         dispatch({ type: 'SELECT_AIRCRAFT', payload: craft });
         // dispatch action for item checklist by id
-        dispatch({ type: 'AIRCRAFT_ITEMS', payload: { id: craft.id } });
+        dispatch({ type: 'ITEMS_BEFORE_ENGINE', payload: { id: craft.id } });
         history.push('/before-engine');
     }
 

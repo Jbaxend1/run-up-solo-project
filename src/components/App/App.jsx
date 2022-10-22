@@ -22,6 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import BeforeEngine from '../BeforeEngine/BeforeEngine';
 
 import './App.css';
+import Taxi from '../Taxi/Taxi';
 
 function App() {
   const dispatch = useDispatch();
@@ -112,6 +113,9 @@ function App() {
           </Route>
           <Route exact path="/before-engine">
               <BeforeEngine />
+          </Route>
+          <Route exact path="/taxi">
+            <Taxi />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
