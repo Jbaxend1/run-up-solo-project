@@ -21,17 +21,20 @@ function RunUp () {
         <>
             <h2>Run-up</h2>
             <button>Back</button>
-            <ul>
+            <div>
                 {
                     items.map( item => {
                         return (
-                            <li>
-                                {item.description}
-                            </li>
+                            <div>
+                                <button>Check</button>
+                                <div>
+                                {item.description}: {item.action}
+                                </div>
+                            </div>
                         )
                     })
                 }
-            </ul>
+            </div>
 
             <button onClick={(event) => nextChecklist(aircraft)}>Next Phase: Takeoff</button>
         </>
