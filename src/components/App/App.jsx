@@ -24,6 +24,7 @@ import BeforeEngine from '../BeforeEngine/BeforeEngine';
 import Taxi from '../Taxi/Taxi';
 import RunUp from '../RunUp/RunUp';
 import Takeoff from '../Takeoff/Takeoff';
+import Complete from '../Complete/Complete';
 
 function App() {
   const dispatch = useDispatch();
@@ -123,6 +124,9 @@ function App() {
           </Route>
           <Route exact path="/takeoff">
             <Takeoff />
+          </Route>
+          <Route exact path="/complete">
+            <Complete />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

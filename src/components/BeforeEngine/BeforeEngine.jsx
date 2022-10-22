@@ -23,17 +23,20 @@ function BeforeEngine () {
         <>
             <h2>Before Engine</h2>
             <button onClick={() => {history.push('/home')}}>Back</button>
-            <ul>
+            <div>
                 {
                     items.map( item => {
                         return (
-                            <li>
-                                {item.description}
-                            </li>
+                            <div>
+                                <button>Check</button>
+                                <div>
+                                {item.description}: {item.action}
+                                </div>
+                            </div>
                         )
                     })
                 }
-            </ul>
+            </div>
             <button onClick={(event) => nextChecklist(aircraft)}>Next Phase: Taxi</button>
         </>
     )

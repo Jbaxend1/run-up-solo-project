@@ -22,17 +22,20 @@ function Taxi() {
         <>
             <h2>Taxi to Runway</h2>
             <button>Back</button>
-            <ul>
+            <div>
                 {
                     items.map( item => {
                         return (
-                            <li>
-                                {item.description}
-                            </li>
+                            <div>
+                                <button>Check</button>
+                                <div>
+                                {item.description}: {item.action}
+                                </div>
+                            </div>
                         )
                     })
                 }
-            </ul>
+            </div>
 
             <button onClick={(event) => nextChecklist(aircraft)}>Next Phase: Run-up</button>
         </>
