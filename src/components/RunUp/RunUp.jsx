@@ -1,8 +1,7 @@
-
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-function Taxi() {
+function RunUp () {
 
     const items = useSelector(store => store.items);
     const aircraft = useSelector(store => store.aircraft);
@@ -11,16 +10,13 @@ function Taxi() {
 
     const dispatch = useDispatch();
 
-    function nextChecklist(aircraft) {
-        console.log('Aircraft Id:', aircraft.id);
-        // dispatch action for item checklist by id
-        dispatch({ type: 'ITEMS_RUNUP', payload: { id: aircraft.id } });
-        history.push('/run-up');
+    function nextChecklist() {
+        
     }
 
     return (
         <>
-            <h2>Taxi to Runway</h2>
+            <h2>Run-up</h2>
             <button>Back</button>
             <ul>
                 {
@@ -39,4 +35,4 @@ function Taxi() {
     )
 }
 
-export default Taxi;
+export default RunUp;

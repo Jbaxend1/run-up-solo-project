@@ -23,6 +23,7 @@ import BeforeEngine from '../BeforeEngine/BeforeEngine';
 
 import './App.css';
 import Taxi from '../Taxi/Taxi';
+import RunUp from '../RunUp/RunUp';
 
 function App() {
   const dispatch = useDispatch();
@@ -116,6 +117,9 @@ function App() {
           </Route>
           <Route exact path="/taxi">
             <Taxi />
+          </Route>
+          <Route exact path="/run-up">
+            <RunUp />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
