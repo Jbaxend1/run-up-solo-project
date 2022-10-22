@@ -1,17 +1,27 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
-function* fetchItems(action) {
+function* fetchBeforeItems(action) {
     try {
         const itemSet = yield axios.get(`/api/item/before-engine/${action.payload.id}`);
         yield put({ type: 'SET_LIST', payload: itemSet.data});
     } catch {
-        console.log('Get items error');
+        console.log('Get before items error');
     }
 };
 
+function* fetchTaxiItems(action) {
+    try {
+        const itemSet = yield axios.get(`/api/item/taxi/${action.payload.id}`);
+        yield put({ type: 'SET_LIST', payload: itemSet.data });
+    } catch {
+        console.log('GET taxi items error');
+    }
+}
+
 function* itemSaga() {
-    yield takeLatest('AIRCRAFT_ITEMS', fetchItems);
+    yield takeLatest('ITEMS_BEFORE_ENGINE', fetchBeforeItems);
+    yield takeLatest('ITEMS_TAXI', fetchTaxiItems);
 }
 
 export default itemSaga;

@@ -9,6 +9,14 @@ function BeforeEngine () {
 
     const items = useSelector(store => store.items);
 
+    function nextChecklist(aircraft) {
+        console.log('Aircraft Id:', aircraft.id);
+        // dispatch action for item checklist by id
+        dispatch({ type: 'ITEMS_TAXI', payload: { id: craft.id } });
+        history.push('/taxi');
+    }
+
+
     return (
         <>
             <h2>Before Engine</h2>
@@ -24,6 +32,7 @@ function BeforeEngine () {
                     })
                 }
             </ul>
+            <button onClick={(event) => nextChecklist(aircraft)}>Next Phase: Taxi</button>
         </>
     )
 }
