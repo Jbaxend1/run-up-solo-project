@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import EditBefore from '../EditBefore/EditBefore';
 
 function EditChecklist () {
 
@@ -10,29 +11,21 @@ function EditChecklist () {
 
     const dispatch = useDispatch();
 
+    function editBefore(e, aircraft) {
+        const category =  e.target.value;
+        // dispatch({ type: })
+
+
+    }
+
     return (
         <>
-            <h2>Edit Checklist</h2>
-            <form>
-                <input type="text" />
-                <input type="submit" />
-            </form>
+            <h2>Edit Checklists</h2>
+            <button onClick={() => {history.push('/edit-before-engine')}}>Before Engine Start</button>
+            <button onClick={() => {history.push('/edit-taxi')}}>Taxi</button>
+            <button onClick={() => {history.push('/edit-run-up')}}>Run-up</button>
+            <button onClick={() => {history.push('/edit-takeoff')}}>Takeoff</button>
 
-            <div>
-                {
-                    items.map( item => {
-                        return (
-                            <div key={item.id}>
-                                <div>
-                                {item.description}: {item.action}
-                                </div>
-                                <button>DELETE</button>
-                                <button>EDIT</button>
-                            </div>
-                        )
-                    })
-                }
-            </div>
         </>
     )
 }

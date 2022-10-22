@@ -26,6 +26,10 @@ import RunUp from '../RunUp/RunUp';
 import Takeoff from '../Takeoff/Takeoff';
 import Complete from '../Complete/Complete';
 import EditChecklist from '../EditChecklist/EditChecklist';
+import EditBefore from '../EditBefore/EditBefore';
+import EditTaxi from '../EditTaxi/EditTaxi';
+import EditRunup from '../EditRunup/EditRunup';
+import EditTakeoff from '../EditTakeoff/EditTakeoff';
 
 function App() {
   const dispatch = useDispatch();
@@ -131,6 +135,18 @@ function App() {
           </Route>
           <Route exact path="/edit-checklist">
             <EditChecklist />
+          </Route>
+          <Route exact path="/edit-before-engine">
+            <EditBefore />
+          </Route>
+          <Route exact path="/edit-taxi">
+            <EditTaxi />
+          </Route>
+          <Route exact path="/edit-run-up">
+            <EditRunup />
+          </Route>
+          <Route exact path="/edit-takeoff">
+            <EditTakeoff />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
