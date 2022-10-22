@@ -6,13 +6,15 @@ function BeforeEngine () {
     const history = useHistory();
 
     const aircraft = useSelector(store => store.aircraft);
-
     const items = useSelector(store => store.items);
+
+    const dispatch = useDispatch();
+
 
     function nextChecklist(aircraft) {
         console.log('Aircraft Id:', aircraft.id);
         // dispatch action for item checklist by id
-        dispatch({ type: 'ITEMS_TAXI', payload: { id: craft.id } });
+        dispatch({ type: 'ITEMS_TAXI', payload: { id: aircraft.id } });
         history.push('/taxi');
     }
 
