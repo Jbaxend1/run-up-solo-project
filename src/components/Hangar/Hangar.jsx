@@ -2,6 +2,17 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
+import Avatar from '@mui/material/Avatar';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 
 
 function Hangar() {
@@ -39,20 +50,17 @@ function Hangar() {
     function editChecklist(craft) {
         console.log('Aircraft Id:', craft.id);
         dispatch({ type: 'SELECT_AIRCRAFT', payload: craft });
-        dispatch({ type: 'AIRCRAFT_ITEMS', payload: { id: craft.id }});
+        dispatch({ type: 'AIRCRAFT_ITEMS', payload: { id: craft.id } });
 
         history.push('/edit-checklist');
     }
 
+
     return (
         <>
-            <div>
-                <h3>Hangar</h3>
-            </div>
-            <div>
-
-
-            </div>
+            <Divider variant="middle">
+                <Chip label="Your Hangar" />
+            </Divider>
             <div>
                 {
                     aircraftList.length === 0 && (
@@ -62,12 +70,37 @@ function Hangar() {
                 {
                     aircraftList.map(craft => {
                         return (
-                            <div key={craft.id}>
-                                <img src={craft.url} />
-                                <h4>{craft.name}</h4>
-                                <h6>Hours Flown: {craft.hours}</h6>
-                                <button onClick={(event) => editChecklist(craft)}>Edit Checklist</button>
-                                <button onClick={(event) => planeChecklist(craft)}>Start Pre-Flight</button>
+                            <div key={craft.id} style={{
+                                justifyContent: "center",
+                                alignItems: "center",
+                                marginBottom: "15px", marginTop: "15px"
+                            }}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', flex: '1 0 auto' }}>
+
+                                    <Card raised={true} sx={{ flex: '1 0 auto' }}>
+                                        <CardMedia
+                                            component="img"
+                                            height="375"
+                                            image={craft.url}
+                                            alt={craft.name}
+                                        />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="div">
+                                                {craft.name}
+                                            </Typography>
+                                            <Typography gutterBottom variant="h6" component="div">
+                                                Hours: {craft.hours}
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions>
+                                            <Button variant="contained" size="small"
+                                                onClick={(event) => planeChecklist(craft)}
+                                            >Start Checklist</Button>
+                                            <Button variant="outlined" size="small">Edit Checklists</Button>
+                                        </CardActions>
+                                    </Card>
+                                </Box>
+                                <Divider variant="middle" sx={{ marginTop: '50px', marginBottom: '50px' }} />
                             </div>
                         );
                     })
