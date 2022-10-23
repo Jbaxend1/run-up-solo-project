@@ -1,7 +1,12 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import ConnectingAirportsOutlinedIcon from '@mui/icons-material/ConnectingAirportsOutlined';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
-function BeforeEngine () {
+
+
+function BeforeEngine() {
 
     const history = useHistory();
 
@@ -22,15 +27,18 @@ function BeforeEngine () {
     return (
         <>
             <h2>Before Engine</h2>
-            <button onClick={() => {history.push('/home')}}>Back</button>
+            <Button onClick={() => { history.push('/home') }} variant='contianed' size='small'>
+                <Typography>Back</Typography>
+                <ConnectingAirportsOutlinedIcon />
+            </Button>
             <div>
                 {
-                    items.map( item => {
+                    items.map(item => {
                         return (
                             <div>
                                 <button>Check</button>
                                 <div>
-                                {item.description}: {item.action}
+                                    {item.description}: {item.action}
                                 </div>
                             </div>
                         )

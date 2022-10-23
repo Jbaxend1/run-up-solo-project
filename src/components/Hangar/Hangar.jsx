@@ -13,7 +13,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-
+import HouseSidingIcon from '@mui/icons-material/HouseSiding';
+import GiteIcon from '@mui/icons-material/Gite';
 
 function Hangar() {
 
@@ -59,7 +60,7 @@ function Hangar() {
     return (
         <>
             <Divider variant="middle">
-                <Chip label="Your Hangar" />
+                <Chip icon={<GiteIcon sx={{ bgcolor: "whitesmoke", borderRadius: 3}}/>} label="Your Hangar" variant="outlined" sx={{ color: "White"}} />
             </Divider>
             <div>
                 {
@@ -77,7 +78,7 @@ function Hangar() {
                             }}>
                                 <Box sx={{ display: 'flex', flexDirection: 'column', flex: '1 0 auto' }}>
 
-                                    <Card raised={true} sx={{ flex: '1 0 auto' }}>
+                                    <Card raised={true} variant="rounded" sx={{ flex: '1 0 auto' }}>
                                         <CardMedia
                                             component="img"
                                             height="375"
