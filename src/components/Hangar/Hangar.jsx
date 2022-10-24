@@ -97,7 +97,7 @@ function Hangar() {
                                             <Button variant="contained" size="small"
                                                 onClick={(event) => planeChecklist(craft)}
                                             >Start Checklist</Button>
-                                            <Button variant="outlined" size="small">Edit Checklists</Button>
+                                            <Button onClick={(event) => editChecklist(craft)} variant="outlined" size="small">Edit Checklists</Button>
                                         </CardActions>
                                     </Card>
                                 </Box>
