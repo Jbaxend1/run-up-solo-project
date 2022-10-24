@@ -36,6 +36,16 @@ function EditBefore() {
         });
     }
 
+    const deleteItem = (item) => {
+        console.log(item.id);
+        axios.delete(`/api/item/${item.id}`).then((response) => {
+            fetchItems();
+        }).catch((error) => {
+            console.log(error);
+            alert('Something wrong in DELETE');
+        });
+    }
+
 
     return (
         <>

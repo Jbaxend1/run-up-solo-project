@@ -111,23 +111,23 @@ router.post('/', (req, res) => {
     }
 })
 
-// router.delete('/delete/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
 
-//     console.log(req.params.id);
+    console.log(req.params.id);
 
-//     if(req.isAuthenticated()) {
-//         const queryText = `DELETE FROM "item" WHERE "id" = $1;`;
+    if(req.isAuthenticated()) {
+        const queryText = `DELETE FROM "item" WHERE "id" = $1;`;
 
-//         pool.query(queryText, [req.params.id])
-//             .then( result => {
-//                 res.send(result.rows);
-//             }). catch( error => {
-//                 console.log('Error: GET checklist by id');
-//                 res.sendStatus(500);
-//             });
-//     } else {
-//         res.sendStatus(403) // Forbidden
-//       }
-// }) 
+        pool.query(queryText, [req.params.id])
+            .then( (results) => {
+                res.sendStatus(200);
+            }). catch( error => {
+                console.log('Error: DELETE', error);
+                res.sendStatus(500);
+            });
+    } else {
+        res.sendStatus(403) // Forbidden
+      }
+}) 
 
 module.exports = router;
