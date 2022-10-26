@@ -1,6 +1,11 @@
-
-import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import ConnectingAirportsOutlinedIcon from '@mui/icons-material/ConnectingAirportsOutlined';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import DataTable from '../DataTable/DataTable';
+import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 
 function Taxi() {
 
@@ -18,26 +23,33 @@ function Taxi() {
         history.push('/run-up');
     }
 
+    useEffect(() => {
+        // On Page Load
+        fetchItems();
+    }, []);
+
+    function fetchItems() {
+        dispatch({ type: 'ITEMS_TAXI', payload: { id: aircraft.id } })
+    }
+
     return (
         <>
-            <h2>Taxi to Runway</h2>
-            <button>Back</button>
-            <div>
-                {
-                    items.map( item => {
-                        return (
-                            <div>
-                                <button>Check</button>
-                                <div>
-                                {item.description}: {item.action}
-                                </div>
-                            </div>
-                        )
-                    })
-                }
+            <div className='headers'>
+                <h2>Taxi</h2>
+            </div>
+            <div className="button-comp">
+                <Button sx={{paddingLeft: '20px', marginRight: '5px'}} onClick={() => { history.push('/before-engine') }} variant='contained' size='small'>
+                    <Typography>Back</Typography>
+                    <ConnectingAirportsOutlinedIcon />
+                </Button>
+                <Button variant="contained" size="small" onClick={(event) => nextChecklist(aircraft)}>
+                    <Typography>Next Phase: Run-up</Typography>
+                    <FlightTakeoffIcon />
+                </Button>
             </div>
 
-            <button onClick={(event) => nextChecklist(aircraft)}>Next Phase: Run-up</button>
+            <DataTable />
+
         </>
     )
 }
