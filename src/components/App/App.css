@@ -111,3 +111,36 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dddddd;
+  max-width: 100%;
+  
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-cotnten: left;
+}
+
+.button-comp {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  /* margin-left: 590px;
+  margin-right: 500px;
+  margin-bottom: 30px; */
+}
+
+.checklistButton {
+  
+}
+
+.headers {
+  display: flex;
+  justify-content: center;
+}
