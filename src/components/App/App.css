@@ -157,3 +157,17 @@ input {
   width: 385px;
   height: 500px;
 }
+
+.about {
+  
+}
+
+.aboutItems {
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-right: 85px;
+  
+}
