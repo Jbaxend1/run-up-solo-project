@@ -136,11 +136,24 @@ input {
   margin-bottom: 30px; */
 }
 
-.checklistButton {
-  
-}
 
 .headers {
   display: flex;
   justify-content: center;
+}
+
+.cardContainer {
+  
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+
+  max-width: 90%;
+}
+
+.card {
+  
+  margin-left: 15px;
+  width: 385px;
+  height: 500px;
 }
