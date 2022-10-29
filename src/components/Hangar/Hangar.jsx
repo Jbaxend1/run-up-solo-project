@@ -56,6 +56,10 @@ function Hangar() {
         history.push('/edit-checklist');
     }
 
+    const displayAircraft = (craftToDisplay) => {
+        history.push(`/detail/${craftToDisplay.id}`)
+    }
+
 
     return (
         <>
@@ -98,6 +102,7 @@ function Hangar() {
                                                 onClick={(event) => planeChecklist(craft)}
                                             >Start Checklist</Button>
                                             <Button onClick={(event) => editChecklist(craft)} variant="outlined" size="small">Edit Checklists</Button>
+                                            <Button onClick={(event) => displayAircraft(craft)} variant="outlined" size="small">Edit Aircraft</Button>
                                         </CardActions>
                                     </Card>
                                 </Box>

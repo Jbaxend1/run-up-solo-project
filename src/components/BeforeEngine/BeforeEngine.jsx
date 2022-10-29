@@ -12,7 +12,7 @@ function BeforeEngine() {
 
     const history = useHistory();
 
-    const aircraft = useSelector(store => store.aircraft);
+    const aircraft = useSelector(store => store.aircraft.aircraft);
     const items = useSelector(store => store.items);
 
     const dispatch = useDispatch();
