@@ -1,0 +1,52 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
+import HouseSidingIcon from '@mui/icons-material/HouseSiding';
+import GiteIcon from '@mui/icons-material/Gite';
+
+function EditAircraft() {
+
+    
+    return (
+        <>
+            <Box sx={{ display: 'flex', flexDirection: 'column', flex: '1 0 auto' }}>
+
+                <Card raised={true} variant="rounded" sx={{ flex: '1 0 auto' }}>
+                    <CardMedia
+                        component="img"
+                        height="375"
+                        image={craft.url}
+                        alt={craft.name}
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            {craft.name}
+                        </Typography>
+                        <Typography gutterBottom variant="h6" component="div">
+                            Hours: {craft.hours}
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <Button variant="contained" size="small"
+                            onClick={(event) => planeChecklist(craft)}
+                        >Start Checklist</Button>
+                        <Button onClick={(event) => editChecklist(craft)} variant="outlined" size="small">Edit Checklists</Button>
+                        <Button onClick={() => { history.push(`/edit/aircraft/${craft.id}`) }} variant="outlined" size="small">Edit Aircraft</Button>
+                    </CardActions>
+                </Card>
+            </Box>
+        </>
+    )
+
+}
+
+export default EditAircraft;

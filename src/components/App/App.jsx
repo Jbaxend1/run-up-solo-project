@@ -30,6 +30,8 @@ import EditBefore from '../EditBefore/EditBefore';
 import EditTaxi from '../EditTaxi/EditTaxi';
 import EditRunup from '../EditRunup/EditRunup';
 import EditTakeoff from '../EditTakeoff/EditTakeoff';
+import EditAircraft from '../EditAircraft/EditAircraft';
+import AircraftDetail from '../AircraftDetail/AircraftDetail';
 
 function App() {
   const dispatch = useDispatch();
@@ -147,6 +149,12 @@ function App() {
           </Route>
           <Route exact path="/edit-takeoff">
             <EditTakeoff />
+          </Route>
+          <Route exact path="/edit/aircraft/:id">
+            <EditAircraft />
+          </Route>
+          <Route exact path="/detail/:craftId">
+            <AircraftDetail />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
