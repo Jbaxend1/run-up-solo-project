@@ -10,8 +10,20 @@ import { put, takeLatest } from 'redux-saga/effects';
 //     }
 // }
 
+function* editAircraft(action) {
+    try {
+        yield axios.put(`/api/aircraft/${ action.payload.craftId }`, action.payload);
+        if (action.history) {
+            action.history.goBack();
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 function* editSaga() {
     // yield takeLatest('DELETE_ITEM', deleteBeforeItem);
+    yield takeLatest('EDIT_AIRCRAFT', editAircraft);
 }
 
 export default editSaga;

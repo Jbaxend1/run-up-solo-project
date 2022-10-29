@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
@@ -11,21 +11,41 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import axios from 'axios';
 
 function AircraftDetail() {
 
     const craft = useSelector(store => store.aircraft.selectedAircraft);
 
     const { craftId } = useParams();
-
-    const [ name, setName ] = useState('');
-    const [ hours, setHours ] = useState('');
-
     const dispatch = useDispatch();
 
+    const [name, setName] = useState('');
+    const [hours, setHours] = useState('');
+    const [pic, setPic] = useState('');
+    const history = useHistory();
+
+    // const dispatch = useDispatch();
+
     useEffect(() => {
-        dispatch({ type: 'FETCH_AIRCRAFT_DETAILS', payload: craftId });
+        // dispatch({ type: 'FETCH_AIRCRAFT_DETAILS', payload: craftId });
+        if (craftId) {
+            axios.get(`/api/aircraft/detail/${craftId}`).then(response => {
+                const craft = response.data;
+                setName(craft.name);
+                setHours(craft.hours);
+                setPic(craft.url);
+            }).catch(error => {
+                console.log(error);
+                alert('Something Went wrong');
+            })
+        }
     }, [craftId]);
+
+    const submitForm = (e) => {
+        e.preventDefault();
+        dispatch({ type: 'EDIT_AIRCRAFT', payload: { name, hours, craftId }, history })
+    }
 
     return (
         <>
@@ -35,32 +55,34 @@ function AircraftDetail() {
                     <CardMedia
                         component="img"
                         height="375"
-                        image={craft.url}
-                        alt={craft.name}
+                        image={pic}
+                        alt={name}
                     />
                     <CardContent>
                         <Typography variant="h6">
                             Edit
                         </Typography>
-                        <TextField
-                            label="Aircraft Name"
-                            id="outlined-size-small"
-                            defaultValue={craft.name}
-                            size="small"
-                            InputLabelProps={{ shrink: true }}
-                            onChange={(e) => setName(e.target.value)}
-                            value={name}
-                        />
-                        <TextField
-                            label="Hours Flown"
-                            id="outlined-size-small"
-                            defaultValue={craft.hours}
-                            size="small"
-                            InputLabelProps={{ shrink: true }}
-                        />
+                        <form onSubmit={submitForm}>
+                            <TextField
+                                label="Aircraft Name"
+                                id="outlined-size-small"
+                                size="small"
+                                InputLabelProps={{ shrink: true }}
+                                onChange={(e) => setName(e.target.value)}
+                                value={name}
+                            />
+                            <TextField
+                                label="Hours Flown"
+                                size="small"
+                                InputLabelProps={{ shrink: true }}
+                                onChange={(e) => setHours(e.target.value)}
+                                value={hours}
+                            />
+                            <Button type='submit' variant='outlined'>Update</Button>
+                        </form>
+
                     </CardContent>
                     <CardActions>
-                        <Button variant='outlined'>Update</Button>
                     </CardActions>
                 </Card>
             </Box>
