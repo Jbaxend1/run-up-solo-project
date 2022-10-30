@@ -7,7 +7,7 @@ function UserPage() {
   
   return (
     <div className="container">
-      <h2>Welcome,</h2>
+      
       <PilotProfile />
       <LogOutButton className="btn" />
     </div>

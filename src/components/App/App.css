@@ -7,7 +7,7 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
-  background-color: lightslategray;
+  background-color: rgb(156, 172, 188);
 }
 
 img {
@@ -160,15 +160,34 @@ input {
 
 .about {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .aboutItems {
   display: flex;
+  justify-content: space-around;
   align-content: center;
-  justify-content: flex-end;
   flex-wrap: wrap;
   flex-direction: row;
   margin-right: 85px;
   
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  /* justify-items: center; */
+  align-items: center;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-bottom: 12px;
 }
