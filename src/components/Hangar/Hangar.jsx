@@ -23,6 +23,7 @@ function Hangar() {
     const dispatch = useDispatch();
 
     const [aircraftList, setAircraftList] = useState([]);
+    
 
     useEffect(() => {
         // On Page Load
@@ -59,7 +60,6 @@ function Hangar() {
     const displayAircraft = (craftToDisplay) => {
         history.push(`/detail/${craftToDisplay.id}`)
     }
-
 
     return (
         <>

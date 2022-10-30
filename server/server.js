@@ -12,6 +12,7 @@ const userRouter = require('./routes/user.router');
 const aircraftRouter = require('./routes/aircraft.router');
 const itemRouter = require('./routes/item.router');
 const editRouter = require('./routes/edit.router');
+const weatherRouter = require('./routes/weather.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -29,6 +30,7 @@ app.use('/api/user', userRouter);
 app.use('/api/aircraft', aircraftRouter);
 app.use('/api/item', itemRouter);
 app.use('/api/edit', editRouter);
+app.use('/api/weather', weatherRouter)
 
 // Serve static files
 app.use(express.static('build'));
