@@ -22,13 +22,13 @@ function PilotProfile() {
 
     const user = useSelector((store) => store.user);
     const [airport, setAirport] = useState('');
-    const [temp, setTemp] = useState('');
-    const [baro, setBaro] = useState('');
-    const [icao, setIcao] = useState('');
-    const [visi, setVisi] = useState('');
-    const [wind, setWind] = useState('');
+    const [temp, setTemp] = useState('N/A');
+    const [baro, setBaro] = useState('N/A');
+    const [icao, setIcao] = useState('N/A');
+    const [visi, setVisi] = useState('N/A');
+    const [wind, setWind] = useState('N/A');
     const [open, setOpen] = useState(false);
-    const [name, setName] = useState('')
+    const [name, setName] = useState('N/A')
 
     const handleClickOpen = (airport) => {
         loadWeather(airport);
@@ -43,14 +43,20 @@ function PilotProfile() {
         axios.get(`/api/weather/${airport}`)
             .then(response => {
                 console.log(response.data);
-                setTemp(response.data.data[0].temperature.fahrenheit);
-                setBaro(response.data.data[0].barometer.hg);
-                // setWind(response.data.data[0].wind.degrees);
+                if(response.data.data[0].temperature) {
+                    setTemp(response.data.data[0].temperature.fahrenheit);
+                } 
+                if(response.data.data[0].barometer){
+                    setBaro(response.data.data[0].barometer.hg);
+                }
+                if(response.data.data[0].visibility){
+                    setVisi(response.data.data[0].visibility.miles);
+                }
+                 if(response.data.data[0].wind){
+                    setWind(response.data.data[0].wind.speed_kts);
+                }
                 setIcao(response.data.data[0].icao);
-                setVisi(response.data.data[0].visibility.miles);
                 setName(response.data.data[0].station.name)
-
-
             }).catch(error => {
                 console.log(error);
                 alert('Something Wrong in GET API')
