@@ -19,7 +19,7 @@ function EditBefore() {
 
     const [action, setAction] = useState('');
     const [description, setDescription] = useState('');
-    const [category, setCategory] = useState('before_engine');
+    const [category, setCategory] = useState('');
 
     const history = useHistory();
 
@@ -44,11 +44,14 @@ function EditBefore() {
         });
     }
 
+    const handleChange = (event) => {
+        setCategory(event.target.value);
+    };
 
 
     return (
         <>
-            <Typography variant='h4' sx={{textAlign: 'center', marginBottom: '14px'}}>EDIT Before Engine Start</Typography>
+            <Typography variant='h4' sx={{textAlign: 'center', marginBottom: '12px'}}>EDIT Before Engine Start</Typography>
 
             <div className='form-items'>
                 <div className='add-items'>
@@ -59,12 +62,13 @@ function EditBefore() {
                 </div>
                 <div className='add-items'>
                     <FormControl  size='small' sx={{ minWidth: 200 }}>
-                        <InputLabel>Category</InputLabel>
-                        <Select onChange={(e) => setCategory(e.target.value)} size='small'
+                        <InputLabel id='category'>Category</InputLabel>
+                        <Select onChange={handleChange} size='small'
+                            labelId='category'
                             label='Category'
-                            placeholder='Before Engine'
+                            value={category}
                         >
-                            <MenuItem value="before_engine">Before Engine Start</MenuItem>
+                            <MenuItem value='before_engine'>Before Engine Start</MenuItem>
                             <MenuItem value="taxi">Taxi</MenuItem>
                             <MenuItem value="run_up">Run-Up</MenuItem>
                             <MenuItem value="takeoff">Takeoff</MenuItem>
@@ -86,7 +90,7 @@ function EditBefore() {
                     {
                         items.map(item => {
                             return (
-                                <EditListItem item={item} />
+                                <EditListItem key={item.id} item={item} />
                             )
                         })
                     }

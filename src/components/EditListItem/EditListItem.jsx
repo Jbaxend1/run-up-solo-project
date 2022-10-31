@@ -28,7 +28,7 @@ function EditListItem({ item }) {
     }
 
     return (
-        <ListItem key={item.id} disablePadding>
+        <ListItem disablePadding>
             <ListItemButton>
                 <ListItemIcon>
                     <DeleteIcon onClick={(e) => deleteItem(item)} />

@@ -23,7 +23,7 @@ function EditChecklist() {
                 Edit Checklists
             </Typography>
             <div className="cardContainer">
-                <Card className="card" elevation="15" onClick={() => { history.push('/edit-before-engine') }}>
+                <Card className="card" elevation={'15'} onClick={() => { history.push('/edit-before-engine') }}>
                     <CardActionArea>
                         <CardMedia
                             component="img"

@@ -124,7 +124,7 @@ input {
 .wrapper {
   display: flex;
   flex-direction: column;
-  align-cotnten: left;
+  align-content: center;
 }
 
 .button-comp {
