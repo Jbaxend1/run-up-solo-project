@@ -2,18 +2,15 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import EditListItem from '../EditListItem/EditListItem';
-
+import TextField from '@mui/material/TextField';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
+import Button from '@mui/material/Button';
+import FormControl from '@mui/material/FormControl';
+import { Typography } from '@mui/material';
 
 function EditBefore() {
 
@@ -47,31 +44,49 @@ function EditBefore() {
         });
     }
 
-    
+
 
     return (
         <>
-            <h2>EDIT Before Engine Start</h2>
-            <form onSubmit={addNewItem}>
-                <input onChange={(e) => setDescription(e.target.value)} value={description} type="text" placeholder='description' />
-                <input onChange={(e) => setAction(e.target.value)} value={action} type="text" placeholder='action' />
-                <label for='categories'>Category</label>
-                <select onChange={(e) => setCategory(e.target.value)} id="categories" name="categories">
-                    <option value="before_engine">Before Engine Start</option>
-                    <option value="taxi">Taxi</option>
-                    <option value="run_up">Run-Up</option>
-                    <option value="takeoff">Takeoff</option>
-                </select>
-                <input type="submit" />
-            </form>
-            <button onClick={() => { history.push('/edit-checklist') }}>Edit Home</button>
-            <button onClick={() => { history.push('/edit-taxi') }}>Next</button>
+            <Typography variant='h4' sx={{textAlign: 'center', marginBottom: '14px'}}>EDIT Before Engine Start</Typography>
+
+            <div className='form-items'>
+                <div className='add-items'>
+                    <TextField size='small' onChange={(e) => setDescription(e.target.value)} value={description} type="text" placeholder='description' />
+                </div>
+                <div className='add-items'>
+                    <TextField size='small' onChange={(e) => setAction(e.target.value)} value={action} type="text" placeholder='action' />
+                </div>
+                <div className='add-items'>
+                    <FormControl  size='small' sx={{ minWidth: 200 }}>
+                        <InputLabel>Category</InputLabel>
+                        <Select onChange={(e) => setCategory(e.target.value)} size='small'
+                            label='Category'
+                            placeholder='Before Engine'
+                        >
+                            <MenuItem value="before_engine">Before Engine Start</MenuItem>
+                            <MenuItem value="taxi">Taxi</MenuItem>
+                            <MenuItem value="run_up">Run-Up</MenuItem>
+                            <MenuItem value="takeoff">Takeoff</MenuItem>
+                        </Select>
+                    </FormControl>
+                </div>
+                <div className='add-items'>
+                    <Button onClick={addNewItem}>ADD</Button>
+                </div>
+                <div className='add-items'>
+                    <Button onClick={() => { history.push('/edit-checklist') }}>Edit Home</Button>
+                </div>
+                <div className='add-items'>
+                    <Button onClick={() => { history.push('/edit-taxi') }}>Next</Button>
+                </div>
+            </div>
             <div>
                 <List>
                     {
                         items.map(item => {
                             return (
-                               <EditListItem item={item}/>
+                                <EditListItem item={item} />
                             )
                         })
                     }

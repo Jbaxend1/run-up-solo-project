@@ -169,6 +169,15 @@ input {
   margin-bottom: 8px;
 }
 
+.form-items {
+  display: flex;
+  justify-content: center;
+}
+
+.add-items {
+  padding-left: 10px;
+}
+
 .aboutItems {
   display: flex;
   justify-content: space-evenly;
