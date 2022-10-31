@@ -17,13 +17,6 @@ function EditChecklist() {
 
     const dispatch = useDispatch();
 
-    function editBefore(e, aircraft) {
-        const category = e.target.value;
-        // dispatch({ type: })
-
-
-    }
-
     return (
         <>
             <Typography className='headers' variant='h4'>

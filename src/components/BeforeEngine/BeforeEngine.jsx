@@ -41,6 +41,7 @@ function BeforeEngine() {
             <div className='headers'>
                 <h2>Before Engine</h2>
             </div>
+            <h3>{aircraft.id}</h3>
             <div className="button-comp">
                 <Button sx={{ paddingLeft: '20px', marginRight: '5px' }} onClick={() => { history.push('/home') }} variant='contained' size='small'>
                     <Typography>Back</Typography>

@@ -10,7 +10,7 @@ import Switch from '@mui/material/Switch';
 function EditBefore() {
 
     const items = useSelector(store => store.items);
-    const aircraft = useSelector(store => store.aircraft);
+    const aircraft = useSelector(store => store.aircraft.aircraft);
 
     const [action, setAction] = useState('');
     const [description, setDescription] = useState('');

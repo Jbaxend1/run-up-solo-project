@@ -9,7 +9,7 @@ import AirplaneTicketIcon from '@mui/icons-material/AirplaneTicket';
 
 function Takeoff() {
     const items = useSelector(store => store.items);
-    const aircraft = useSelector(store => store.aircraft);
+    const aircraft = useSelector(store => store.aircraft.aircraft);
 
     const history = useHistory();
 

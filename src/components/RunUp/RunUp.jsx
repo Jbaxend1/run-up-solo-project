@@ -11,7 +11,7 @@ import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 function RunUp () {
 
     const items = useSelector(store => store.items);
-    const aircraft = useSelector(store => store.aircraft);
+    const aircraft = useSelector(store => store.aircraft.aircraft);
 
     const history = useHistory();
 

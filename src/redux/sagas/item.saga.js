@@ -5,6 +5,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* fetchBeforeItems(action) {
     try {
+        console.log(action.payload)
         const itemSet = yield axios.get(`/api/item/before-engine/${action.payload.id}`);
         yield put({ type: 'SET_LIST', payload: itemSet.data});
     } catch {
@@ -14,6 +15,8 @@ function* fetchBeforeItems(action) {
 
 function* fetchTaxiItems(action) {
     try {
+        console.log(action.payload)
+
         const itemSet = yield axios.get(`/api/item/taxi/${action.payload.id}`);
         yield put({ type: 'SET_LIST', payload: itemSet.data });
     } catch {
@@ -26,7 +29,7 @@ function* fetchRunUpItems(action) {
         const itemSet = yield axios.get(`/api/item/run-up/${action.payload.id}`);
         yield put({ type: 'SET_LIST', payload: itemSet.data });
     } catch {
-        console.log('GET taxi items error');
+        console.log('GET run-up items error');
     }
 }
 

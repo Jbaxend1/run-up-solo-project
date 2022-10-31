@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 function EditTakeoff () {
 
     const items = useSelector(store => store.items);
-    const aircraft = useSelector(store => store.aircraft);
+    const aircraft = useSelector(store => store.aircraft.aircraft);
 
     const history = useHistory();
 
@@ -17,7 +17,7 @@ function EditTakeoff () {
     }, []);
 
     function fetchItems() {
-        dispatch({ type: 'ITEMS_', payload: {id: aircraft.id}})
+        dispatch({ type: 'ITEMS_TAKEOFF', payload: {id: aircraft.id}})
     }
 
     return (

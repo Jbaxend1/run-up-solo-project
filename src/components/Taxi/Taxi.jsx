@@ -10,7 +10,7 @@ import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 function Taxi() {
 
     const items = useSelector(store => store.items);
-    const aircraft = useSelector(store => store.aircraft);
+    const aircraft = useSelector(store => store.aircraft.aircraft);
 
     const history = useHistory();
 
@@ -36,6 +36,7 @@ function Taxi() {
         <>
             <div className='headers'>
                 <h2>Taxi</h2>
+                <h3>{aircraft.id}</h3>
             </div>
             <div className="button-comp">
                 <Button sx={{paddingLeft: '20px', marginRight: '5px'}} onClick={() => { history.push('/before-engine') }} variant='contained' size='small'>

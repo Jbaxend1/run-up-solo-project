@@ -191,3 +191,8 @@ input {
   justify-content: flex-start;
   padding-bottom: 12px;
 }
+
+.complete-card {
+  display: flex;
+  justify-content: center;
+}

@@ -15,6 +15,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import React from "react";
 import CloseIcon from '@mui/icons-material/Close';
+import { SettingsSystemDaydreamRounded } from "@mui/icons-material";
+
 
 function PilotProfile() {
 
@@ -26,6 +28,7 @@ function PilotProfile() {
     const [visi, setVisi] = useState('');
     const [wind, setWind] = useState('');
     const [open, setOpen] = useState(false);
+    const [name, setName] = useState('')
 
     const handleClickOpen = (airport) => {
         loadWeather(airport);
@@ -42,9 +45,10 @@ function PilotProfile() {
                 console.log(response.data);
                 setTemp(response.data.data[0].temperature.fahrenheit);
                 setBaro(response.data.data[0].barometer.hg);
-                setWind(response.data.data[0].wind.speed_kts);
+                // setWind(response.data.data[0].wind.degrees);
                 setIcao(response.data.data[0].icao);
                 setVisi(response.data.data[0].visibility.miles);
+                setName(response.data.data[0].station.name)
 
 
             }).catch(error => {
@@ -97,7 +101,7 @@ function PilotProfile() {
                             
                             <DialogContent>
                                 <DialogContentText>
-                                    <Typography sx={{ paddingLeft: '10px' }}>Airport: {icao}</Typography>
+                                    <Typography sx={{ paddingLeft: '10px' }}>Airport: {name}</Typography>
                                     <Typography sx={{ paddingLeft: '10px' }}>Temp "F": {temp} deg</Typography>
                                     <Typography sx={{ paddingLeft: '10px' }}>BARO: {baro} hg</Typography>
                                     <Typography sx={{ paddingLeft: '10px' }}>Wind: {wind} kts</Typography>

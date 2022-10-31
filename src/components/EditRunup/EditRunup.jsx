@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 function EditRunup () {
 
     const items = useSelector(store => store.items);
-    const aircraft = useSelector(store => store.aircraft);
+    const aircraft = useSelector(store => store.aircraft.aircraft);
 
     const history = useHistory();
 
