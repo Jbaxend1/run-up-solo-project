@@ -12,6 +12,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import EditListItem from '../EditListItem/EditListItem';
 
 
 function EditBefore() {
@@ -46,15 +47,7 @@ function EditBefore() {
         });
     }
 
-    const deleteItem = (item) => {
-        console.log(item.id);
-        axios.delete(`/api/item/${item.id}`).then((response) => {
-            fetchItems();
-        }).catch((error) => {
-            console.log(error);
-            alert('Something wrong in DELETE');
-        });
-    }
+    
 
     return (
         <>
@@ -78,14 +71,7 @@ function EditBefore() {
                     {
                         items.map(item => {
                             return (
-                                <ListItem key={item.id} disablePadding>
-                                    <ListItemButton>
-                                        <ListItemIcon>
-                                        <DeleteIcon onClick={()=> deleteItem(item)}/>
-                                        </ListItemIcon>
-                                        <ListItemText primary={item.description} secondary={item.action}/>
-                                    </ListItemButton>
-                                </ListItem>
+                               <EditListItem item={item}/>
                             )
                         })
                     }
