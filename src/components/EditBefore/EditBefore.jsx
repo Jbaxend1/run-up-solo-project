@@ -5,6 +5,13 @@ import axios from 'axios';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 function EditBefore() {
@@ -49,7 +56,6 @@ function EditBefore() {
         });
     }
 
-
     return (
         <>
             <h2>EDIT Before Engine Start</h2>
@@ -68,19 +74,23 @@ function EditBefore() {
             <button onClick={() => { history.push('/edit-checklist') }}>Edit Home</button>
             <button onClick={() => { history.push('/edit-taxi') }}>Next</button>
             <div>
-                {
-                    items.map(item => {
-                        return (
-                            <div key={item.id}>
-                                <div>
-                                    {item.description}: {item.action}
-                                </div>
-                                <button onClick={(event) => deleteItem(item)}>DELETE</button>
-                                <button>EDIT</button>
-                            </div>
-                        )
-                    })
-                }
+                <List>
+                    {
+                        items.map(item => {
+                            return (
+                                <ListItem key={item.id} disablePadding>
+                                    <ListItemButton>
+                                        <ListItemIcon>
+                                        <DeleteIcon onClick={()=> deleteItem(item)}/>
+                                        </ListItemIcon>
+                                        <ListItemText primary={item.description} secondary={item.action}/>
+                                    </ListItemButton>
+                                </ListItem>
+                            )
+                        })
+                    }
+
+                </List>
             </div>
         </>
     )
