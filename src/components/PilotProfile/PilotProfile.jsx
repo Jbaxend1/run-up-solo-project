@@ -107,11 +107,11 @@ function PilotProfile() {
                             
                             <DialogContent>
                                 <DialogContentText>
-                                    <Typography sx={{ paddingLeft: '10px' }}>Airport: {name}</Typography>
-                                    <Typography sx={{ paddingLeft: '10px' }}>Temp "F": {temp} deg</Typography>
-                                    <Typography sx={{ paddingLeft: '10px' }}>BARO: {baro} hg</Typography>
-                                    <Typography sx={{ paddingLeft: '10px' }}>Wind: {wind} kts</Typography>
-                                    <Typography sx={{ paddingLeft: '10px' }}>Visibility: {visi} miles</Typography>
+                                    <Typography variant={'inherit'} component={'h5'} sx={{ paddingLeft: '10px' }}>Airport: {name}</Typography>
+                                    <Typography variant={'inherit'} component={'h5'} sx={{ paddingLeft: '10px' }}>Temp: {temp} F</Typography>
+                                    <Typography variant={'inherit'} component={'h5'} sx={{ paddingLeft: '10px' }}>BARO: {baro} hg</Typography>
+                                    <Typography variant={'inherit'} component={'h5'} sx={{ paddingLeft: '10px' }}>Wind: {wind} kts</Typography>
+                                    <Typography variant={'inherit'} component={'h5'} sx={{ paddingLeft: '10px' }}>Visibility: {visi} miles</Typography>
                                 </DialogContentText>
                             </DialogContent>
                             <DialogActions>
