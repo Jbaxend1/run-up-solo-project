@@ -34,7 +34,7 @@ function Takeoff() {
     return (
         <>
             <div className='headers'>
-                <h2>TAKEOFF</h2>
+                <h2>Phase: Takeoff</h2>
             </div>
             <div className="button-comp">
                 <Button sx={{paddingLeft: '20px', marginRight: '5px'}} onClick={() => { history.push('/run-up') }} variant='contained' size='small'>

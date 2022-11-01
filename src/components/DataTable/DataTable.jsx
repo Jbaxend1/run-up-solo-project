@@ -20,6 +20,7 @@ export default function DataTable() {
                 pageSize={10}
                 rowsPerPageOptions={[10]}
                 checkboxSelection
+                sx={{ fontSize: '16px'}}
             />
         </div>
     );

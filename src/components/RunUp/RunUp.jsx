@@ -36,7 +36,7 @@ function RunUp () {
     return (
         <>
             <div className='headers'>
-                <h2>RUN-UP</h2>
+                <h2>Phase: Run-up</h2>
             </div>
             <div className="button-comp">
                 <Button sx={{paddingLeft: '20px', marginRight: '5px'}} onClick={() => { history.push('/taxi') }} variant='contained' size='small'>
