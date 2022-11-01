@@ -15,6 +15,7 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import HouseSidingIcon from '@mui/icons-material/HouseSiding';
 import GiteIcon from '@mui/icons-material/Gite';
+import { white } from '@mui/material/colors';
 
 function Hangar() {
 
@@ -63,8 +64,8 @@ function Hangar() {
 
     return (
         <>
-            <Divider variant="middle">
-                <Chip icon={<GiteIcon sx={{ bgcolor: "whitesmoke", borderRadius: 3}}/>} label="Your Hangar" variant="outlined" sx={{ color: "White"}} />
+            <Divider variant="middle" >
+                <Chip icon={<GiteIcon sx={{ bgcolor: "whitesmoke", borderRadius: 3}}/>} label="Your Hangar" variant="contained" sx={{ color: "black", backgroundColor: 'whitesmoke', fontSize: '18px'}} />
             </Divider>
             <div>
                 {
