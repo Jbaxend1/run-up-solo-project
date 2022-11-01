@@ -20,10 +20,10 @@ function EditChecklist() {
     return (
         <>
             <Typography className='headers' variant='h4'>
-                Edit Checklists
+                Edit Checklists Phases
             </Typography>
             <div className="cardContainer">
-                <Card className="card"  onClick={() => { history.push('/edit-before-engine') }}>
+                <Card className="card" elevation="15" onClick={() => { history.push('/edit-before-engine') }}>
                     <CardActionArea>
                         <CardMedia
                             component="img"
@@ -33,7 +33,7 @@ function EditChecklist() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant='h4' component="div">
-                                Before Engine Start
+                                Engine Start
                             </Typography>
                             <Typography variant='body1' color='text.secondary'>
                                 The Journey Starts Here...

@@ -50,7 +50,7 @@ function EditTaxi () {
 
     return (
         <>
-        <Typography variant='h4' sx={{textAlign: 'center', marginBottom: '12px'}}>EDIT Taxit</Typography>
+        <Typography variant='h4' sx={{textAlign: 'center', marginBottom: '12px'}}>EDIT Taxi Phase</Typography>
 
         <div className='form-items'>
             <div className='add-items'>
@@ -81,7 +81,7 @@ function EditTaxi () {
                 <Button onClick={() => { history.push('/edit-checklist') }}>Edit Home</Button>
             </div>
             <div className='add-items'>
-                <Button onClick={() => { history.push('/edit-taxi') }}>Next</Button>
+                <Button onClick={() => { history.push('/edit-run-up') }}>Next</Button>
             </div>
         </div>
         <div>

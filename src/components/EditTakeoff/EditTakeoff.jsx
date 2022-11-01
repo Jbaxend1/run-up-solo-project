@@ -80,9 +80,6 @@ function EditTakeoff () {
                 <div className='add-items'>
                     <Button onClick={() => { history.push('/edit-checklist') }}>Edit Home</Button>
                 </div>
-                <div className='add-items'>
-                    <Button onClick={() => { history.push('/edit-taxi') }}>Next</Button>
-                </div>
             </div>
             <div>
                 <List>

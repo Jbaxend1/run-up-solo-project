@@ -81,7 +81,7 @@ function EditRunup () {
                     <Button onClick={() => { history.push('/edit-checklist') }}>Edit Home</Button>
                 </div>
                 <div className='add-items'>
-                    <Button onClick={() => { history.push('/edit-taxi') }}>Next</Button>
+                    <Button onClick={() => { history.push('/edit-takeoff') }}>Next</Button>
                 </div>
             </div>
             <div>

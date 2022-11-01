@@ -51,7 +51,7 @@ function EditBefore() {
 
     return (
         <>
-            <Typography variant='h4' sx={{textAlign: 'center', marginBottom: '12px'}}>EDIT Before Engine Start</Typography>
+            <Typography variant='h4' sx={{textAlign: 'center', marginBottom: '12px'}}>EDIT Engine Start Phase</Typography>
 
             <div className='form-items'>
                 <div className='add-items'>
