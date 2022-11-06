@@ -20,10 +20,17 @@ Run-up is an application in which pilots, both student and veteran, can use to s
 
 ## Screenshots
 
+## Pilot Profile Page
 <img src="public/Images/Screenshots/pilot_landing_page.png" />
-<img src="" />
-<img src="" />
-<img src="" />
+
+## Weather API Interface
+<img src="public/Images/Screenshots/weather_api.png" />
+
+## Checklist
+<img src="public/Images/Screenshots/checklist.png" />
+
+## Edit Checklist Page
+<img src="public/Images/Screenshots/edit_checklist.png" />
 
 
 ### Prerequisites
