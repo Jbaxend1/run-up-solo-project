@@ -94,11 +94,6 @@ Run-up is an application in which pilots, both student and veteran, can use to s
 
 - 10. To access the weather conditions API on the Pilot Profile Page, enter any four character ICAO code. i.e. (KJFK) and hit submit. 
 
-
-## License
-
-<a href="https://choosealicense.com/licenses/mit/"><img src="https://raw.githubusercontent.com/johnturner4004/readme-generator/master/src/components/assets/images/mit.svg" height=40 />MIT License</a>
-
 ## Acknowledgements
 
 Thank you to the Prime Academy staff who helped make this application a reality. 
